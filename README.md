@@ -1,7 +1,9 @@
 # Friction-First Learning
 
 ---
-**Note**: this is an experimental template repo. I'm going to use it to learn or refresh one skill at an hour a day this June/July 2026, then debrief on [my blog](https://belderbos.dev) on whether the methodology delivers. The method is about using AI to _force_ deliberate practice instead of shortcutting it; the template is the scaffold for that practice. (A language I'm relearning in parallel, I'm doing by immersion — forcing all my regular work into it — which is a different kind of effort than this deliberate-practice loop.)
+**Note**: this is an experimental template repo. I'm going to use it to learn or refresh one skill during 30-60 min a day, then debrief on [my blog](https://belderbos.dev) on whether the methodology delivers.
+
+The method is about using AI to _force_ deliberate practice instead of shortcutting it; the template is the scaffold for that practice. (A language I'm relearning in parallel, I'm doing by immersion — forcing all my regular work into it — which is a different kind of effort than this deliberate-practice loop.)
 
 How I came to this idea? Read [Don't Delegate the Friction](https://belderbos.dev/blog/dont-delegate-the-friction/).
 
