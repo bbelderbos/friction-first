@@ -1,44 +1,23 @@
-# YYYY-MM-DD — Track <A|B> — Project <N> — Session <N/10>
+# <NN> — <YYYY-MM-DD> — Project <N> — Session <N/total>
 
-> Fill this in during the last 5 minutes of your session. Honest entries, not impressive ones. The point is to surface what's actually happening in your head.
+> Fill this in during the last 5 minutes. Honest, not impressive. Surface what's actually happening in your head.
 
-## Design intent (written before coding)
+## What I built
 
-Paste or reference what you wrote in `design-intent.md` for this session. One paragraph: what you intended to build, how, and why.
+Two or three bullets. Code refs like `src/Main.hs:42` are good. Which milestone did this move?
 
-## What I actually built
+## Friction
 
-Two or three bullets. Code references with `path/to/file.rs:42` are good.
+The honest core of the log:
 
-## Surprises
-
-What didn't match my mental model? What did the language, the docs, or the compiler tell me that I didn't expect?
-
-## Lookups
-
-What did I need to ask the tutor or search for? For each lookup, write the *real* question behind it — not "how do I do X" but "what concept am I missing that made me unable to do X."
-
-## Near-misses
-
-Where did I almost cheat?
-- Almost copy-pasted from a doc page without reading it
-- Almost asked the tutor for the answer, not a hint
-- Almost accepted a Copilot suggestion
-- Almost gave up and switched to a familiar pattern from another language
-
-These are the most important entries. They reveal where the friction is real.
+- **Surprised me** — what did the language, the docs, or the compiler tell me that I didn't expect?
+- **Looked up** — for each, the *real* question behind it: not "how do I do X" but "what concept was I missing that made me unable to do X."
+- **Almost cheated** — where I nearly copy-pasted a doc unread, asked the tutor for the answer instead of a hint, accepted an autocomplete, or fell back to a pattern from another language. These are the most important entries: they reveal where the friction is real.
 
 ## Tomorrow's question
 
-One open question to start tomorrow's session with. Better than starting cold.
+One open question to start the next session with. Better than starting cold.
 
-## Self-rating
+## Self-rating (1–5)
 
-On a 1-5 scale, how much do I understand what I built today?
-- 1: I could not reproduce this from memory
-- 2: I could reproduce it with hints
-- 3: I could reproduce it slowly
-- 4: I could reproduce it fluently and explain each line
-- 5: I could redesign it from scratch with better choices
-
-If you're at 1 or 2, slow down next session. The point is not to ship faster than your understanding.
+How well do I understand what I built? 1: couldn't reproduce it from memory · 3: could reproduce it slowly · 5: could redesign it from scratch with better choices. At 1–2, slow down next session — don't ship faster than your understanding.

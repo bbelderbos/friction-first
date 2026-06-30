@@ -17,6 +17,8 @@ A 30-day deliberate practice template for learning (or relearning) a skill witho
 
 This repo is a fork-and-fill scaffolding. It gives you the methodology, the prompts, the daily templates, and two worked examples. You bring the skill, the projects, and the discipline.
 
+> **Just want to try it first?** Do the [90-minute Speedrun](SPEEDRUN.md) — all three phases once, on one throwaway task. No 30-day commitment.
+
 ---
 
 ## The Premise
@@ -49,6 +51,7 @@ The variable being tested is **how much code AI writes for you**. That is the ac
 
 ```
 README.md                         # this file
+SPEEDRUN.md                       # 90-minute test drive of the whole method
 plans/
   rust-known.md                   # worked example: Rust, basics already known
   go-new.md                       # worked example: Go, clean slate
@@ -57,6 +60,7 @@ templates/
   daily-log.md                    # friction log template, one per session
   design-intent.md                # design-intent prompt, written before coding
 prompts/
+  plan-bootstrap.md               # one-time prompt to draft your plan + milestones
   no-spoiler-tutor.md             # system prompt for the Socratic AI tutor
   comprehension-gate.md           # the 4-question gate for Phase 3
 ```
@@ -66,11 +70,43 @@ prompts/
 ## How to Use This Repo
 
 1. **Fork or copy** this repo into your own workspace. Your fork is where your progress lives — commit to it daily.
-2. **Pick one language and three projects.** Copy `plans/_template.md` to `plans/my-plan.md` and fill it in. The two worked examples (`plans/rust-known.md`, `plans/go-new.md`) show the shape — one for a language you half-know, one for a clean slate.
+2. **Pick one language and scope your projects.** Copy `plans/_template.md` to `plans/my-plan.md` and fill it in — or run `prompts/plan-bootstrap.md` once to have AI draft it from your language and experience level (scoping projects is meta-work, not the skill, so AI help here is fair). How many projects: if the language is new to you, prefer **one project that escalates across the three phases** over three cold starts — you go deeper and the experiment stays clean. Two or three only if you already know the basics. The worked examples (`plans/rust-known.md`, `plans/go-new.md`) show the shape — one for a language you half-know, one for a clean slate.
 3. **Set up the No-Spoiler Tutor as a Claude Project** (see the next section). This is the core of the method — do not skip it or substitute a general-purpose chat.
-4. **Day 1**: write your design intent in `templates/design-intent.md`, open the official docs for your language, and start. No agent. No autocomplete. You type every character.
-5. **Each session**: add a dated log file in `logs/` based on `templates/daily-log.md`. The friction log is the actual deliverable — protect it over finishing projects.
-6. **Stick to the phase protocol.** The system prompt does most of the enforcement; your job is to not switch tabs.
+4. **Phase 1**: open the official docs for your language and start. No agent. No autocomplete. You type every character.
+5. **Each session**: add a numbered log file in `logs/` (`01.md`, `02.md`, …; the header carries both the number and the date) based on `templates/daily-log.md`. The friction log is the actual deliverable — protect it over finishing projects.
+6. **Phase 2 onwards**: before each session, fill in the design-intent ritual (see below). The tutor will critique it before you code.
+7. **Stick to the phase protocol.** The system prompt does most of the enforcement; your job is to not switch tabs.
+
+**Before Session 1, confirm the fork is filled in:** `<LANG>` replaced everywhere (including inside the tutor prompt body, not just its first line), your plan's project/session counts consistent top to bottom, and your first log file copied from the template and ready. Leftover placeholders ride along silently otherwise.
+
+---
+
+## Your First Session (Session 0: Setup)
+
+Before Phase 1's sessions, you get one setup session. It is *not* language learning — don't apply the friction protocol to it.
+
+- **Install the toolchain.** Most languages have one recommended installer that manages compiler versions (rustup, ghcup, nvm, pyenv…). Get the REPL or compiler answering a `--version` check, then compile a one-line hello world. That's your "hello, toolchain" moment.
+- **Move briskly here.** The tutor should *not* Socratic-question you through installation — the productive struggle is reserved for the language, not the package manager. If setup eats the whole session, fine.
+- **Still write a `logs/` entry.** Even if all you did was install tools and print "hello". The log habit starts day one, not when the "real" work begins.
+
+Then **Phase 1, Session 1** opens with two questions, not a chapter: *what is the smallest slice of Project 1 you can build, and what concepts does just that slice need?* Read only far enough to attempt it.
+
+---
+
+## The Design-Intent Ritual (Phase 2 onwards)
+
+Starting in Phase 2, before you open the editor, spend 5 minutes filling in `templates/design-intent.md`. This is a pre-coding planning step, not documentation.
+
+**Why it matters:** If you can't articulate what you're about to build, you aren't ready to build it. Writing the design intent forces clarity — and naming expected friction in advance primes you to engage when you hit it instead of pattern-matching to a known answer or asking the tutor to dissolve it.
+
+**What goes in each section:**
+- **What I'm building today** — one sentence, the smallest slice you can finish in this session
+- **How I'll approach it** — two or three sentences specific enough that future-you could predict the diff
+- **What I expect to be hard** — the friction you expect to face (Haskell's type system, lazy evaluation, monads, etc.)
+- **What I will NOT do** — scope boundary, the feature/refactor you're deferring today
+- **How I'll know I'm done** — concrete criterion, not just "it compiles"
+
+Once filled in, save it (optionally append to a `design-intents/` folder for a session log), then open the editor and bring it to the tutor for critique before you start coding.
 
 ---
 
@@ -102,7 +138,7 @@ The template itself does nothing at runtime. It ships a methodology, prompts, te
 ## What Guarantees Skill Compound
 
 - The **no-AI-code-generation baseline** in Phase 1. Non-negotiable.
-- **Writing design intent before code**, every session.
+- **Writing design intent before code**, starting in Phase 2. (Phase 1 is learning basics; Phase 2+ is where architecture decisions matter.)
 - **The daily friction log.** Forces meta-cognition.
 - **No autocomplete acceptance** in Phases 1 and 2. One "tab to accept" steals a decision.
 - **The comprehension gate** in Phase 3. If you can't explain it, it doesn't ship.
@@ -119,6 +155,8 @@ If you want to test how prior knowledge affects pace, run two tracks in parallel
 Same phase protocol, alternate days. By day 30 you'll know how much your existing mental models actually transfer, and where pure language fluency has to be rebuilt from scratch.
 
 The two worked examples (`plans/rust-known.md`, `plans/go-new.md`) are a paired set if you want to run them as the canonical A/B.
+
+Mark each session's track in its log — prefix the filename (`a-01.md`, `b-01.md`) or add `Track A`/`Track B` to the header — so the two tracks stay separable in the retro.
 
 ---
 

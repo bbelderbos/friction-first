@@ -21,6 +21,8 @@ Go is intentionally simple. No classes, no inheritance, no generics until recent
 
 ## Projects
 
+*Three parallel projects, kept that way so this clean-slate B-track stays comparable to the Rust A-track. A solo from-scratch learner (not running A/B) should instead prefer **one project that escalates across the three phases** — see the README's setup step.*
+
 ### Project 1: CLI tool (Phase 1, no-spoiler tutor only)
 
 - **What**: A small CLI utility. Pick something practical: a directory size analyzer, a markdown link checker, a tiny todo manager backed by a JSON file.
